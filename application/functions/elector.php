@@ -18,11 +18,11 @@
         {
             switch ($get['go'])
             {
-                case "createAccount":
-                    return APP . "/view/css/beforeLogin/header.css";
+                case "createEvent":
+                    return APP . "/view/css/header.css";
                     break;
                 case "enter":
-                    return APP . "/view/css/beforeLogin/header.css";
+                    return APP . "/view/css/header.css";
                     break;
 
                 default:
@@ -33,11 +33,11 @@
         {
             switch ($get['go'])
             {
-                case "createAccount":
-                    return APP . "/view/templates/beforeLogin/header.html";
+                case "createEvent":
+                    return APP . "/view/templates/header.html";
                     break;
                 case "enter":
-                    return APP . "/view/templates/beforeLogin/header.html";
+                    return APP . "/view/templates/header.html";
                     break;
 
                 default:
@@ -58,8 +58,8 @@
         {
             switch ($get['go'])
             {
-                case "createAccount":
-                    return APP . "/view/" . $kind . "/beforeLogin/bodyReg.css";
+                case "createEvent":
+                    return APP . "/view/" . $kind . "/createEvent.css";
                     break;
                 default:
                     return APP . "/view/" . $kind . "/eventPage.css";
@@ -68,8 +68,8 @@
         else
         {
             switch ($get['go']) {
-                case "createAccount":
-                    return APP . "/controllers/bodyReg.php";
+                case "createEvent":
+                    return APP . "/controllers/createEvent.php";
                     break;
                 default:
                     return APP . "/controllers/eventPage.php";

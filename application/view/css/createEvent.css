@@ -1,0 +1,54 @@
+#main{
+    width: 400px;
+    height: 500px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#main input{
+    height: 30px;
+    border-bottom: 1px solid gray;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 300px;
+    outline: none;
+    margin-top: 60px;
+}
+
+#main input#priceEvent{
+    margin-top: 10px;
+}
+
+#main textarea{
+    width: 300px;
+    height: 100px;
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 4px 8px;
+    border-color: #d653ff;
+}
+
+#main button{
+    width: 200px;
+    height: 30px;
+    background-color: white;
+    margin-top: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    outline: none;
+}
+
+#main button:hover{
+    background-color: rgba(214, 83, 255, 0.53);
+    color: white;
+    border: 1px solid white;
+}
+
+#main button:active{
+    background-color: rgba(214, 83, 255, 0.92);
+    color: white;
+    border: 1px solid white;
+}
