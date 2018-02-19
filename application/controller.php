@@ -9,6 +9,11 @@
     // Запускаем сессии
     session_start();
 
+    use EvDay\MySQL as M;
+
+    $sql = "ok";
+    $db = new M();
+
     include APP . "/functions/elector.php";
     include APP . "/functions/MySQLArrays.php";
 

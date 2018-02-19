@@ -64,3 +64,11 @@ header{
     font-size: 25px;
     color: black;
 }
+
+#createEvent a span:hover{
+    color: #a3a3a3;
+}
+
+#createEvent a span:active{
+    color: #6f6f6f;
+}

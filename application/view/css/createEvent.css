@@ -15,19 +15,24 @@
     border-right: none;
     width: 300px;
     outline: none;
+    margin-top: 10px;
+}
+
+#main input#nameEvent{
     margin-top: 60px;
 }
 
-#main input#priceEvent{
-    margin-top: 10px;
+#main input#timeEvent{
+    width: 180px;
 }
 
 #main textarea{
     width: 300px;
-    height: 100px;
+    height: 115px;
     margin-top: 20px;
     border-radius: 5px;
     padding: 4px 8px;
+    outline: none;
     border-color: #d653ff;
 }
 
@@ -39,6 +44,7 @@
     border: 1px solid gray;
     border-radius: 5px;
     outline: none;
+    cursor: pointer;
 }
 
 #main button:hover{
