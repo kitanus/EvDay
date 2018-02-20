@@ -6,13 +6,35 @@
  * Time: 12:02
  */
 
+use EvDay\Events as E;
+
+$eventFunctions = new E($_POST);
+
+$chooseSort = null;
+
+if(!empty($_POST["action"]) && $_POST["action"] == "filter"){
+    $chooseSort = $eventFunctions->orderSort();
+}
+
 $event = $db->select(
     "`events`",
-    $db->fromArrToStr(chooseSelect("events"))
+    $db->fromArrToStr(chooseSelect("events")),
+    null,
+    null,
+    $chooseSort
 );
+
+//print var_dump($event);
 
 $text = '';
 for($i = 0; $i<count($event); $i++) {
+
+    if($event[$i]["price"] == "0"){
+        $price = "Бесплатно";
+    }else{
+        $price = $event[$i]["price"]." р.";
+    }
+
     $text .= '<div class="event">';
     $text .= '<header>';
     $text .= '<p>' . $event[$i]["name"] . '</p>';
@@ -20,7 +42,7 @@ for($i = 0; $i<count($event); $i++) {
     $text .= '<article>';
     $text .= '<p>' . $event[$i]["time"] . '</p>';
     $text .= $event[$i]["content"];
-    $text .= '<p>' . $event[$i]["price"] . ' р.</p>';
+    $text .= '<p>' . $price . ' </p>';
     $text .= '<a href="' . $event[$i]["link"] . '">Подробнее..</a>';
     $text .= '</article>';
     $text .= '</div>';

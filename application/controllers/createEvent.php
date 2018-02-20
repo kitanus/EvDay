@@ -1,8 +1,8 @@
 <?php
 
-print "<pre>";
-print var_dump($_POST);
-print "</pre>";
+//print "<pre>";
+//print var_dump($_POST);
+//print "</pre>";
 
 if($_POST["action"] && $_POST["action"] == "saveEvent") {
     $db->insert(
