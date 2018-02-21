@@ -21,6 +21,14 @@
                 $select['events']['price'] = "price";
                 $select['events']['time'] = "time";
                 $select['events']['link'] = "link";
+                $select['events']['event_check'] = "checked";
+                return $select;
+                break;
+
+            case "admin":
+                $select['admin']['id'] = "id";
+                $select['admin']['login'] = "login";
+                $select['admin']['password'] = "password";
                 return $select;
                 break;
 
@@ -88,18 +96,8 @@
     function chooseUpdate($name, $post = null, $var = null)
     {
         switch ($name) {
-            case "pTTable":
-                $values["tr"] = "{$var[2]}";
-                $values["table_order"] = "{$post['order'][$var[0]]}";
-                $values["day_id"] = "{$post["day"][$var[0]]}";
-                $values["time_lesson"] = "{$post['time'][$var[0]]}";
-                $values["week_id"] = "{$post['week'][$var[0]]}";
-                $values["lesson_id"] = "{$post['lesson'][$var[0]]}";
-                $values["type_id"] = "{$post['type'][$var[0]]}";
-                $values["room_lesson"] = "{$post['room'][$var[0]]}";
-                $values["building_id"] = "{$post['build'][$var[0]]}";
-                $values["teacher_id"] = "{$post['teachSurname'][$var[0]]}";
-                $values["stud_group_id"] = "{$var[1]}";
+            case "event":
+                $values["event_check"] = "{$var}";
                 return $values;
                 break;
 

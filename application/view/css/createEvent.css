@@ -1,4 +1,4 @@
-#main{
+main{
     width: 400px;
     height: 500px;
     margin-top: 10px;
@@ -7,7 +7,7 @@
     text-align: center;
 }
 
-#main input{
+main input{
     height: 30px;
     border-bottom: 1px solid gray;
     border-top: none;
@@ -18,15 +18,15 @@
     margin-top: 10px;
 }
 
-#main input#nameEvent{
+main input#nameEvent{
     margin-top: 60px;
 }
 
-#main input#timeEvent{
+main input#timeEvent{
     width: 180px;
 }
 
-#main textarea{
+main textarea{
     width: 300px;
     height: 115px;
     margin-top: 20px;
@@ -36,7 +36,7 @@
     border-color: #d653ff;
 }
 
-#main button{
+main button{
     width: 200px;
     height: 30px;
     background-color: white;
@@ -47,13 +47,13 @@
     cursor: pointer;
 }
 
-#main button:hover{
+main button:hover{
     background-color: rgba(214, 83, 255, 0.53);
     color: white;
     border: 1px solid white;
 }
 
-#main button:active{
+main button:active{
     background-color: rgba(214, 83, 255, 0.92);
     color: white;
     border: 1px solid white;

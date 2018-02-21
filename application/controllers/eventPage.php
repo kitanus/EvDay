@@ -20,21 +20,21 @@ $event = $db->select(
     "`events`",
     $db->fromArrToStr(chooseSelect("events")),
     null,
-    null,
+    "`event_check` = '1'",
     $chooseSort
 );
 
-//print var_dump($event);
-
 $text = '';
-for($i = 0; $i<count($event); $i++) {
-
-    if($event[$i]["price"] == "0"){
+for($i = 0; $i<count($event); $i++)
+{
+    if($event[$i]["price"] == "0")
+    {
         $price = "Бесплатно";
-    }else{
+    }
+    else
+    {
         $price = $event[$i]["price"]." р.";
     }
-
     $text .= '<div class="event">';
     $text .= '<header>';
     $text .= '<p>' . $event[$i]["name"] . '</p>';

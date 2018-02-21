@@ -21,7 +21,7 @@
                 case "createEvent":
                     return APP . "/view/css/header.css";
                     break;
-                case "enter":
+                case "admin":
                     return APP . "/view/css/header.css";
                     break;
 
@@ -36,7 +36,7 @@
                 case "createEvent":
                     return APP . "/view/templates/header.html";
                     break;
-                case "enter":
+                case "admin":
                     return APP . "/view/templates/header.html";
                     break;
 
@@ -61,6 +61,9 @@
                 case "createEvent":
                     return APP . "/view/" . $kind . "/createEvent.css";
                     break;
+                case "admin":
+                    return APP . "/view/" . $kind . "/admin.css";
+                    break;
                 default:
                     return APP . "/view/" . $kind . "/eventPage.css";
             }
@@ -70,6 +73,9 @@
             switch ($get['go']) {
                 case "createEvent":
                     return APP . "/controllers/createEvent.php";
+                    break;
+                case "admin":
+                    return APP . "/controllers/admin.php";
                     break;
                 default:
                     return APP . "/controllers/eventPage.php";
