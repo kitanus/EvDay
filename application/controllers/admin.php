@@ -5,7 +5,7 @@
  * Date: 21.02.2018
  * Time: 7:28
  */
-
+// Это новая ветка в git
 use EvDay\Events as E;
 
 $event = $db->select(
