@@ -6,6 +6,8 @@
  * Time: 7:28
  */
 
+use EvDay\Events as E;
+
 $event = $db->select(
     "`events`",
     $db->fromArrToStr(chooseSelect("events"))
@@ -37,29 +39,9 @@ $event = $db->select(
     $db->fromArrToStr(chooseSelect("events"))
 );
 
+$eventFunctions = new E($_POST, $event);
+
 $template = "";
-for ($i = 0; $i<count($event); $i++)
-{
-    if($event[$i]["checked"] == 1)
-    {
-        $check = "checked";
-    }
-    else
-    {
-        $check = "";
-    }
-    $template .= '<tr>';
-    $template .= '<td>'.$event[$i]["name"].'</td>';
-    $template .= '<td>';
-    $template .= '<p>';
-    $template .= $event[$i]["content"];
-    $template .= '</p>';
-    $template .= '</td>';
-    $template .= '<td>'.$event[$i]["price"].'</td>';
-    $template .= '<td>'.$event[$i]["time"].'</td>';
-    $template .= '<td>'.$event[$i]["link"].'</td>';
-    $template .= '<td><input type="checkbox" name="visible['.$event[$i]["id"].']" value="1" '.$check.'></td>';
-    $template .= '</tr>';
-}
+$template = $eventFunctions->listOfEvents();
 
 include APP . "/view/templates/admin.html";

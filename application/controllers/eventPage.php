@@ -8,14 +8,6 @@
 
 use EvDay\Events as E;
 
-$eventFunctions = new E($_POST);
-
-$chooseSort = null;
-
-if(!empty($_POST["action"]) && $_POST["action"] == "filter"){
-    $chooseSort = $eventFunctions->orderSort();
-}
-
 $event = $db->select(
     "`events`",
     $db->fromArrToStr(chooseSelect("events")),
@@ -24,28 +16,13 @@ $event = $db->select(
     $chooseSort
 );
 
-$text = '';
-for($i = 0; $i<count($event); $i++)
-{
-    if($event[$i]["price"] == "0")
-    {
-        $price = "Бесплатно";
-    }
-    else
-    {
-        $price = $event[$i]["price"]." р.";
-    }
-    $text .= '<div class="event">';
-    $text .= '<header>';
-    $text .= '<p>' . $event[$i]["name"] . '</p>';
-    $text .= '</header>';
-    $text .= '<article>';
-    $text .= '<p>' . $event[$i]["time"] . '</p>';
-    $text .= $event[$i]["content"];
-    $text .= '<p>' . $price . ' </p>';
-    $text .= '<a href="' . $event[$i]["link"] . '">Подробнее..</a>';
-    $text .= '</article>';
-    $text .= '</div>';
+$eventFunctions = new E($_POST, $event);
+
+$chooseSort = null;
+if(!empty($_POST["action"]) && $_POST["action"] == "filter"){
+    $chooseSort = $eventFunctions->typeSort();
 }
+
+$text = $eventFunctions->createEvent();
 
 include APP . "/view/templates/eventPage.html";
