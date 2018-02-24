@@ -8,4 +8,4 @@ if($_POST["action"] && $_POST["action"] == "saveEvent")
     );
 }
 
-include APP . "/view/templates/createEvent.html";
+include APP . "/view/templates/createEvent.php";

@@ -24,7 +24,7 @@
     );
 
     $admin = new A($adminSql);
-    
+
     if($_GET["go"] == "admin") {
         $_GET["go"] = $admin->enter($_GET["login"], $_GET["password"]);
     }

@@ -41,7 +41,4 @@ $event = $db->select(
 
 $eventFunctions = new E($_POST, $event);
 
-$template = "";
-$template = $eventFunctions->listOfEvents();
-
-include APP . "/view/templates/admin.html";
+include APP . "/view/templates/admin.php";
