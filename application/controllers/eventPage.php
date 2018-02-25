@@ -8,6 +8,9 @@
 
 use EvDay\Events as E;
 
+$smarty->caching = 2;
+$smarty->cache_lifetime = 10; // 1/3 минуты
+
 $eventFunctions = new E($_POST, $event);
 
 $chooseSort = null;
@@ -23,4 +26,16 @@ $event = $db->select(
     $chooseSort
 );
 
-include APP . "/view/templates/eventPage.php";
+
+for($i=0; $i<count($event); $i++){
+    $change[$i] =  $eventFunctions->changeFree($event[$i]["price"]);
+}
+
+$smarty->assign('max',count($event));
+$smarty->assign('event',$event);
+$smarty->assign('isFree',$change);
+
+
+$output = $smarty->fetch(APP . "/view/templates/eventPage.tpl");
+
+print $output;

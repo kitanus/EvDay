@@ -34,14 +34,14 @@
             switch ($get['go'])
             {
                 case "createEvent":
-                    return APP . "/view/templates/header.html";
+                    return APP . "/controllers/header.php";
                     break;
                 case "admin":
-                    return APP . "/view/templates/header.html";
+                    return APP . "/controllers/header.php";
                     break;
 
                 default:
-                    return APP . "/view/templates/header.html";
+                    return APP . "/controllers/header.php";
             };
         };
     };

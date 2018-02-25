@@ -15,6 +15,11 @@
     $sql = "ok";
     $db = new M();
 
+    $smarty = new Smarty;
+
+
+    $smarty->caching = true;
+    
     include APP . "/functions/elector.php";
     include APP . "/functions/MySQLArrays.php";
 

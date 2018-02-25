@@ -1,5 +1,8 @@
 <?php
 
+$smarty->caching = 2;
+$smarty->cache_lifetime = 300; // 1/3 минуты
+
 if($_POST["action"] && $_POST["action"] == "saveEvent")
 {
     $db->insert(
@@ -8,4 +11,6 @@ if($_POST["action"] && $_POST["action"] == "saveEvent")
     );
 }
 
-include APP . "/view/templates/createEvent.php";
+$output = $smarty->fetch(APP . "/view/templates/createEvent.tpl");
+
+print $output;

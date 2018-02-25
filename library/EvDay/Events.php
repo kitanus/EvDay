@@ -59,16 +59,16 @@ class Events
         }
     }
 
-    public function changeFree($i){
-        if ($this->event[$i]["price"] == "0") {
+    public function changeFree($price){
+        if ($price == "0") {
             return "Бесплатно";
         } else {
-            return $this->event[$i]["price"] . " р.";
+            return $price . " р.";
         }
     }
 
-    public function changeCheck($i){
-        if($this->event[$i]["checked"] == 1)
+    public function changeCheck($checked){
+        if($checked == 1)
         {
             return "checked";
         }
